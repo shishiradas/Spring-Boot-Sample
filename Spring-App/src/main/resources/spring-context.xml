@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<bean id="msg" class="Message">
+<property name="header" value="Spring Class"/>
+<property name="body"  value="First Day"/>
+</bean>
+
+<bean id="msg1" class="Message">
+<constructor-arg value="Tea Break" index="0"/>
+<constructor-arg value="We will break at 11 am" index="1"/>
+</bean>
+
+
+<bean id="mail" class="Mail">
+<property name="toAddress" value="All"/>
+<property name="fromAddress"  value="theTrainer"/>
+<property name="message"  ref="msg"/>
+</bean>
+
+
+
+</beans>
